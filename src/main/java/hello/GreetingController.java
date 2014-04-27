@@ -19,5 +19,11 @@ public class GreetingController {
         model.addAttribute("name", "hoge");
         return "greeting";
     }
+    
+    @RequestMapping("/greeting_unsafe")
+	public String checkXSS(Model model){
+		model.addAttribute("name", "<strong>strongTag</strong>");
+		return "unsafeGreeting";
+	}
 
 }
