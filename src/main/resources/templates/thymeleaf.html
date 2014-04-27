@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>moke</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <p th:text="'Hello, ' + ${name} + '!'" />
+    <ul>
+                <li th:each="customer : ${customers}" th:text="${customer.firstName}">Item1</li>
+            </ul>
+</body>
+</html>
