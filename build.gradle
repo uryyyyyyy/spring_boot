@@ -25,6 +25,7 @@ repositories {
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+    compile("commons-io:commons-io:2.4")
     testCompile("junit:junit")
 }
 

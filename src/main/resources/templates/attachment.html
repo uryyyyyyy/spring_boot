@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>moke</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <form action="uploadSuccess.html" th:action="@{/upload}" method="post" enctype="multipart/form-data">
+       <input type="file" name="myFile" />
+       <input type="submit" />
+    </form>
+    <img th:src="${filepath}"
+                 src="../../../resources/images/banner-graphic.png"/>
+</body>
+</html>
