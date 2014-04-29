@@ -1,7 +1,7 @@
 spring_boot
 ===========
 
-# check spring MVC 201404
+# check spring BootStrap 2014_04
 
 create simple SpringBoot's web content with Eclipse and gradle.
 
@@ -67,5 +67,30 @@ src/main/webapp/配下に置いたものはそのまま利用できるようで�
 今回の例では、webapp/tmp/* には、localhost:8080/tmp/*でアクセスできるようです。
 
 
-## Spring4 structure
+## Spring4 structure(Japanese)
 
+## Abstruct
+以下、事実と異なるかもしれませんが。。
+- それぞれのクラスを適切に分けやすく、ソースの取替えや改善がしやすい（DI・AOP）
+- フルスタックに近いレベルで色々なライブラリを積んでいるので、変な依存問題が起きにくい。
+
+粗結合な設計を行い易いので大規模開発に向いているフレームワークのようです。
+
+## implements
+
+### Annotation
+- @ComponentScan -- 各種コンポーネントマーク（＠Controller）のついたクラスをスキャンして組み込みます。
+
+- @EnableAutoConfiguration --@beanなどの内容を自動で設定してくれる。
+
+- @Bean -- 必要な設定を記述する（以前のSpringではxmlで定義していた。）
+
+- @RequestMapping -- Tomcatが受けたRequestをpathやMethodによって振り分ける際の指標。
+
+- @Requestparams --Requestに付随したパラメータをJavaの型として受け取る
+
+- @Autowired -- @Beanで定義された設定を自動で読みにいく（AOP）
+
+- @Transactional -- クラスやメソッドにつけると、その範囲内でトランザクションが有効になる。
+
+（以前はxmlなどで詳細な動きを設定してたようなのですが、＠Beanで定義すると重複で怒られたのでデフォルトで用意されてるんだと思います。）
