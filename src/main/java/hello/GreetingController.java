@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
@@ -35,8 +36,8 @@ public class GreetingController {
     }
     
     @RequestMapping(value = "/greeting_unsafe")
-	public String checkXSS(Model model){
-		model.addAttribute("name", "<strong>strongTag</strong>");
+	public String checkXSS(Model model, HttpServletRequest request){
+		model.addAttribute("name", "<strong>"+ request.getRemoteUser() +"</strong>");
 		return "unsafeGreeting";
 	}
     
@@ -102,7 +103,11 @@ public class GreetingController {
 		model.addAttribute("name", list.get(0).toString());
 
 		return "thymeleaf";
-
+	}
+	
+	@RequestMapping("/login")
+	public String login(Model model) {
+		return "login";
 	}
 
 }
