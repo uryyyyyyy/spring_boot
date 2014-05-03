@@ -1,0 +1,15 @@
+# eclipse
+
+eclipse/*
+.classpath
+.project
+.settings/
+
+
+# bin
+
+bin/*
+
+# gradle
+
+.gradle*
