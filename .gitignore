@@ -13,3 +13,7 @@ bin/*
 # gradle
 
 .gradle*
+build/*
+
+# files
+src/main/webapp/tmp/*
